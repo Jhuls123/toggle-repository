@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	height: 100vh;
+	display: grid;
+	place-content: center;
+	color: #ddd;
+	background-color: #333;
+	transition: background-color 200ms ease-in-out;
+}
+body.dark {
+	color: #333;
+	background-color: #DDD;
+}
+.checkbox {
+	position: absolute;
+	top: -9000px;
+	left: -9000px;
+}
+.checkbox:checked + .icon_box::before {
+	left: 26px;
+}
+.checkbox:checked + .icon_box {
+    background-color: rgba(255, 255, 255, .5);
+    box-shadow: .5px 1px 2px #333;
+}
+.checkbox:checked + .icon_box::before {
+    background-color: #333;
+}
+.icon_box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+	background-color: #000;
+	border-radius: 1rem;
+	height: 26px;
+	width: 50px;
+	border-radius: 50px;
+	position: relative;
+}
+.icon_box::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 2.3px;
+	height: 22px;
+	width: 22px;
+	transform: translateY(-50%);
+    background-color: #DDD;
+	border-radius: 1em;
+    transition: left 200ms linear;
+}
+
+.fa-moon {
+	color: #f1c40f;
+}
+.fa-sun {
+	color: #f39c12;
+}
